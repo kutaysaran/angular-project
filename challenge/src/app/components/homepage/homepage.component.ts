@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { NewsService } from 'src/app/services/news.service';
 import { Observable, of } from 'rxjs';
 

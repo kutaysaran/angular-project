@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { NewsService } from 'src/app/services/news.service';
 
 @Component({
   selector: 'app-science',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./science.component.css']
 })
 export class ScienceComponent implements OnInit {
-
-  constructor() { }
+  topHeadlines$: Observable<any> = of(null) ;
+  constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
+    this.topHeadlines$ = this.newsService.getTopHeadlinesByCategory();
   }
 
 }

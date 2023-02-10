@@ -7,7 +7,7 @@
         <p>{{ headline.description }}</p>
         <p>Author: {{ headline.author }}</p>
         <p>Published at: {{ headline.publishedAt | date }}</p>
-        <img [src]="headline.urlToImage" [alt]="headline.title">
+        <img [src]="headline.urlToImage" [alt]="headline.title" width="400px">
       </li>
     </ul>
   </ng-container>
