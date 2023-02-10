@@ -1,6 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
@@ -12,6 +12,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { ScienceComponent } from './components/science/science.component';
 import { SportsComponent } from './components/sports/sports.component';
 import { TechnologyComponent } from './components/technology/technology.component';
+import { PublicHeaderComponent } from './components/public-header/public-header.component';
 
 
 @NgModule({
@@ -25,11 +26,13 @@ import { TechnologyComponent } from './components/technology/technology.componen
     HealthComponent,
     ScienceComponent,
     SportsComponent,
-    TechnologyComponent
+    TechnologyComponent,
+    PublicHeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

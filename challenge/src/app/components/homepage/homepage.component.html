@@ -1,1 +1,14 @@
-<p>homepage works!</p>
+<app-public-header></app-public-header>
+<ng-container *ngIf="topHeadlines$">
+  <ng-container *ngIf="topHeadlines$ | async as topHeadlines">
+    <ul>
+      <li *ngFor="let headline of topHeadlines.articles">
+        <h3>{{ headline.title }}</h3>
+        <p>{{ headline.description }}</p>
+        <p>Author: {{ headline.author }}</p>
+        <p>Published at: {{ headline.publishedAt | date }}</p>
+        <img [src]="headline.urlToImage" [alt]="headline.title">
+      </li>
+    </ul>
+  </ng-container>
+</ng-container>

@@ -12,7 +12,6 @@ import { TechnologyComponent } from './components/technology/technology.componen
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home' },
   { path: 'home', component: HomepageComponent },
   { path: 'about', component: AboutComponent  },
   { path: 'business', component: BusinessComponent },
@@ -22,6 +21,7 @@ const routes: Routes = [
   { path: 'science', component: ScienceComponent },
   { path: 'sports', component: SportsComponent  },
   { path: 'technology', component: TechnologyComponent },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({

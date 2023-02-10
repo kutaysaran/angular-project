@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { NewsService } from 'src/app/services/news.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-homepage',
@@ -6,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-
-  constructor() { }
+  topHeadlines$: Observable<any> = of(null) ;
+  constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
+    this.topHeadlines$ = this.newsService.getTopHeadlines();
+    
   }
 
 }
