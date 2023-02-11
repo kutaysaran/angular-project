@@ -13,6 +13,8 @@ import { ScienceComponent } from './components/science/science.component';
 import { SportsComponent } from './components/sports/sports.component';
 import { TechnologyComponent } from './components/technology/technology.component';
 import { PublicHeaderComponent } from './components/public-header/public-header.component';
+import { SearchComponent } from './components/search/search.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,12 +29,14 @@ import { PublicHeaderComponent } from './components/public-header/public-header.
     ScienceComponent,
     SportsComponent,
     TechnologyComponent,
-    PublicHeaderComponent
+    PublicHeaderComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

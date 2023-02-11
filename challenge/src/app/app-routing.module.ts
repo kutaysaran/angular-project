@@ -7,6 +7,7 @@ import { GeneralComponent } from './components/general/general.component';
 import { HealthComponent } from './components/health/health.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ScienceComponent } from './components/science/science.component';
+import { SearchComponent } from './components/search/search.component';
 import { SportsComponent } from './components/sports/sports.component';
 import { TechnologyComponent } from './components/technology/technology.component';
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'science', component: ScienceComponent },
   { path: 'sports', component: SportsComponent  },
   { path: 'technology', component: TechnologyComponent },
+  { path: 'search', component: SearchComponent},
   { path: '**', redirectTo: 'home' },
 ];
 

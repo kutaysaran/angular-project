@@ -1,14 +1,23 @@
 <app-public-header></app-public-header>
-<ng-container *ngIf="topHeadlines$">
-  <ng-container *ngIf="topHeadlines$ | async as topHeadlines">
-    <ul>
-      <li *ngFor="let headline of topHeadlines.articles">
-        <h3>{{ headline.title }}</h3>
-        <p>{{ headline.description }}</p>
-        <p>Author: {{ headline.author }}</p>
-        <p>Published at: {{ headline.publishedAt | date }}</p>
-        <img [src]="headline.urlToImage" [alt]="headline.title" width="400px">
-      </li>
-    </ul>
-  </ng-container>
-</ng-container>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3 filter-part">
+      <!-- Add your filter components here --> FILTER PART OF COMPONENT
+    </div>
+    <div class="col-9">
+      <ng-container *ngIf="topHeadlines$">
+        <ng-container *ngIf="topHeadlines$ | async as topHeadlines">
+          <ul>
+            <li *ngFor="let headline of topHeadlines.articles">
+              <h3>{{ headline.title }}</h3>
+              <p>{{ headline.description }}</p>
+              <p>Author: {{ headline.author }}</p>
+              <p>Published at: {{ headline.publishedAt | date }}</p>
+              <img [src]="headline.urlToImage" [alt]="headline.title" width="400px">
+            </li>
+          </ul>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
