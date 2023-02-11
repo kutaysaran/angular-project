@@ -1,8 +1,10 @@
 <app-public-header></app-public-header>
-<div>
-  <input type="text" [(ngModel)]="word">
-  <button (click)="searchByWord()">Search</button>
-  <span style="margin-left:320px; font-size: x-large; font-weight: bolder;">Aranan Kelime: {{word}}</span> 
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-6"><input type="text" [(ngModel)]="word">
+  <button (click)="searchByWord()">Search</button></div>
+      <div class="col-6"><span style=" font-size: x-large; font-weight: bolder;">Aranan Kelime: {{word}}</span> </div>
+  </div>
 </div>
 <ng-container *ngIf="topHeadlines$">
   <ng-container *ngIf="topHeadlines$ | async as topHeadlines">
