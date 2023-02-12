@@ -15,7 +15,9 @@ import { TechnologyComponent } from './components/technology/technology.componen
 import { PublicHeaderComponent } from './components/public-header/public-header.component';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

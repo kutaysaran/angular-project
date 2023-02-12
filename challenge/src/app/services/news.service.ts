@@ -27,4 +27,7 @@ export class NewsService {
   getTopHeadlinesByWord(word: string): Observable<any> {
     return this.http.get(`https://newsapi.org/v2/top-headlines?country=tr&q=${word}&apiKey=82652aa3319c448d99ab7daf301f7991`);
   }
+  getTopHeadlinesByCountry(countryCode: string): Observable<any> {
+    return this.http.get(`https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=82652aa3319c448d99ab7daf301f7991`);
+  }
 }
