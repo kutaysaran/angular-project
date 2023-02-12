@@ -11,23 +11,18 @@ export class NewsService {
   constructor(private http: HttpClient,
               private router: Router) {}
 
-  getTopHeadlines(): Observable<any> {
-    return this.http.get('https://newsapi.org/v2/top-headlines?country=tr&apiKey=82652aa3319c448d99ab7daf301f7991');
+  getTopHeadlines(pageIndex: number, word: string): Observable<any> {
+    console.log("pageIndex",pageIndex);
+    console.log("word",word)
+    return this.http.get(`https://newsapi.org/v2/top-headlines?country=tr&q=${word}&apiKey=9380ef19d6d1496cbd53c1e520e5edd2&page=${pageIndex}`);
   }
-  getTopHeadlinesByCategory(): Observable<any> {
+  getTopHeadlinesByFilter(countryCode: string, pageIndex: number, word: string ): Observable<any> {
     const currentUrl = this.router.url;
     const category = currentUrl.split('/')[1];
-    if (category) {
-      return this.http.get(`https://newsapi.org/v2/top-headlines?country=tr&category=${category}&apiKey=82652aa3319c448d99ab7daf301f7991`);
-    } else {
-      return of(null);
-    }
-  
-  }
-  getTopHeadlinesByWord(word: string): Observable<any> {
-    return this.http.get(`https://newsapi.org/v2/top-headlines?country=tr&q=${word}&apiKey=82652aa3319c448d99ab7daf301f7991`);
-  }
-  getTopHeadlinesByCountry(countryCode: string): Observable<any> {
-    return this.http.get(`https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=82652aa3319c448d99ab7daf301f7991`);
+    console.log("pageIndex",pageIndex);
+    console.log("word",word);
+    console.log("category",category);
+    console.log("countryCode",countryCode);
+    return this.http.get(`https://newsapi.org/v2/top-headlines?country=${countryCode}&q=${word}&category=${category}&apiKey=9380ef19d6d1496cbd53c1e520e5edd2&page=${pageIndex}`);
   }
 }

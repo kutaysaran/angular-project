@@ -13,11 +13,14 @@ import { ScienceComponent } from './components/science/science.component';
 import { SportsComponent } from './components/sports/sports.component';
 import { TechnologyComponent } from './components/technology/technology.component';
 import { PublicHeaderComponent } from './components/public-header/public-header.component';
-import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +35,6 @@ import { MatIconModule } from '@angular/material/icon';
     SportsComponent,
     TechnologyComponent,
     PublicHeaderComponent,
-    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

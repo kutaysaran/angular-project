@@ -7,6 +7,7 @@
     <div class="col-9">
       <ng-container *ngIf="topHeadlines$">
         <ng-container *ngIf="topHeadlines$ | async as topHeadlines">
+          <mat-paginator [length]="topHeadlines.totalResults" [pageSize]="20" [pageIndex]="pageIndex" (page)="onPageChange($event)"></mat-paginator>
           <ul>
             <li *ngFor="let headline of topHeadlines.articles">
               <h3>{{ headline.title }}</h3>

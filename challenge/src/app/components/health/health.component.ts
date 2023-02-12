@@ -12,7 +12,7 @@ export class HealthComponent implements OnInit {
   constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
-    this.topHeadlines$ = this.newsService.getTopHeadlinesByCategory();
+    // this.topHeadlines$ = this.newsService.getTopHeadlinesByCategory();
   }
 
 }

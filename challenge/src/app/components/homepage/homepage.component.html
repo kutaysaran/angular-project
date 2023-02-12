@@ -1,12 +1,10 @@
 <app-public-header></app-public-header>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-3 filter-part">
-      <!-- Add your filter components here --> FILTER PART OF COMPONENT
-    </div>
-    <div class="col-9">
+    <div class="col-12">
       <ng-container *ngIf="topHeadlines$">
         <ng-container *ngIf="topHeadlines$ | async as topHeadlines">
+          <mat-paginator [length]="topHeadlines.totalResults" [pageSize]="20" [pageIndex]="pageIndex" (page)="onPageChange($event)"></mat-paginator>
           <ul>
             <li *ngFor="let headline of topHeadlines.articles">
               <h3>{{ headline.title }}</h3>
