@@ -18,6 +18,7 @@
       <ng-container *ngIf="topHeadlines$">
         <ng-container *ngIf="topHeadlines$ | async as topHeadlines">
           <mat-paginator [length]="topHeadlines.totalResults" [pageSize]="20" [pageIndex]="pageIndex" (page)="onPageChange($event)"></mat-paginator>
+          <h4 *ngIf="searchKey.length > 1 " style="text-align: center; color: brown;">Aranan Kelime: "{{searchKey}}" </h4>
           <ul>
             <li *ngFor="let headline of topHeadlines.articles">
               <h3>{{ headline.title }}</h3>

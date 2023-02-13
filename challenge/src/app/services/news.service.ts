@@ -12,11 +12,11 @@ export class NewsService {
               private router: Router) {}
 
   getTopHeadlines(pageIndex: number, word: string): Observable<any> {
-    return this.http.get(`https://newsapi.org/v2/top-headlines?country=tr&q=${word}&apiKey=50af148d894547849979a3bcb34a9c2e&page=${pageIndex}`);
+    return this.http.get(`https://newsapi.org/v2/top-headlines?country=tr&q=${word}&apiKey=9415a201cd9d46c985524ed89d13b4df&page=${pageIndex}`);
   }
   getTopHeadlinesByFilter(countryCode: string, pageIndex: number, word: string ): Observable<any> {
     const currentUrl = this.router.url;
     const category = currentUrl.split('/')[1];
-    return this.http.get(`https://newsapi.org/v2/top-headlines?country=${countryCode}&q=${word}&category=${category}&apiKey=50af148d894547849979a3bcb34a9c2e&page=${pageIndex}`);
+    return this.http.get(`https://newsapi.org/v2/top-headlines?country=${countryCode}&q=${word}&category=${category}&apiKey=9415a201cd9d46c985524ed89d13b4df&page=${pageIndex}`);
   }
 }

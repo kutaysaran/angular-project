@@ -1,34 +1,37 @@
 <app-public-header></app-public-header>
-<p class="container-fluid">Deneyım: Yaklaşık 8 aydır sellerinvoices adlı şirkette  5-6 kişilik bir ekiple birlikte çalışıyorum. Frontend tarafında tek başımayım. Daha büyük bir ekip ve çalışma ortamında bulunabileceğim bir yere geçmek isterim.Çalıştığım proje amazon üzerinden gelir elde eden kişilerin vergilerini sorunsuz ve en kısa şekilde ödeyebileceği güvenli otomatize bir platform oluşturmak üzerine.
-Amazon siparişlerini anlık görüntüleyebileceği , siparişler için faturalarını kesebileceği , gider belirtebileceği ve aylık muhasebe kayıtlarını görebileceği pageler bulunduran bir web uygulaması. Amazon hesabı bağlanıyor. Genel gelir gider tablolarıyla belirli aralıklardaki kar zararları görüntüleyebileceğiniz bir dashboard. Ayrıca userla alakalı şifre değiştirme profilini güncelleme dil değiştirme ve karalisteye asin ekleme gibi özelliklerin olduğu sayfalar mevcut.bunların hepsi login olmuş kullanıcının panelinde gözüken sayfalar.önceki sayfalar için de hizmetleri görüntüleyebileceği kayıt olabileceği , tarafımıza mesaj gönderebileceği (jivochat) kısımlar mevcut.Sık sorulan sorular kısmı.
-
-Yaptığım şeylerden örnek :  yabancı dil seçeceği eklemek tüm siteye, authenticaton guard oluşturmak (can activate kullanarak) , form yapılarına hakimim , life cyclelar hakkında yeterli bilgiye sahibim , rxjs ile lightweight state management yaptım. Lazy loading routing yapılarını sıfırdan kurabilecek seviyedeyim. Bootstrap kullanarak responsive tasarım yapabiliyorum . Rxjs ile reactive ve reusable program kodlayabiliyorum. Angular ile servis yapılarını kullanarak
-Birden fazla componentin kullanacağı ortak fonksiyonları burada tanımlamak mantıklı , aynı zamanda bu servislerin içinde Http requestleri göndererek return olarak gelen Observable değerleri alıp manipüle edebiliyorum.rest api isteklerini kullanarak backendle iletişime geçip gerekli dataları get post put(update) delete yapabiliyorum. jasmine ve karma ile angular için test kodları yazabiliyorum.
-
-
-
-İşten ekstra olarak okuldaki projeler 
-
-(160)İlk sene java ile object oriented programming deneyimim oldu. 
-(250)Data structures and algorithms dersinde c++ kullandık.
-(300)Algoritma analizinde python ile paralel programlama üzerine proje yaptım.
-(321)ntroduction to database systems dersinde sqlite kullanarak yine birden fazla proje yaptım.
-(344,240)Ayrıca aldığım hardware donanımla alakalı dersler de var. 
-(343) olasılık ve istatistik dersi aldım. Matematiğim çok iyidir.
-Development in Software Engineering
-Dersinde frontend ekibinde react kullanarak Artie adında sanat eserlerinin paylaşılıp kullanıcıların etkileşim içinde olabileceği instagram mantığında bir uygulamamız var. Search like update item post item gibi comment gibi özellikler var.
-
-
-işten ekstra olarak react js ile turkcelle 41 günlük bir stajım oldu. 
-— Fotoğraf ve video editi yapabileceğim yaptığım editleri indirebileceğim bi uygulama geliştirdim.onun dışında bulunduğum departmanda halihazırda yürütülen projelerde ufak görevler alarak version control systemler hakkında bilgi sahibi oldum. Commit , merge ,pull request. tracking changes in source code during software development. Halihazırda kullandığım GitHub desktop , source tree , bitbucket bulunmakta. Fetch etme branch açma remote ve local branchler arasında işlemler yapma pull push vs. Stash kullanımı.(commitlenmeyen dosyaları stashe alma vs.)
-
-
-Bunun yanında son zamanlarda vaktimi genelde kendimi geliştirmek üzerine harcıyorum. Önümdeki planlarda Course
-Google Cloud
-Building Scalable Java Microservices with Spring Boot and Spring Cloud
-1-Spring Boot ve Spring Cloud ile Ölçeklenebilir Java Mikro Hizmetleri Oluşturma
-2-Ayrıca  visibility, daha iyi user experience ve devamlılık konusunda web applicationları iyileştirme konusunda  search engine optimization konusunda kendimi geliştirmeyi düşünüyorum.
-3-Ngrx ile statemanagement giriş seviyesinde biliyorum. Bu konuda kendimi geliştirebilirim.
-4-Data analizi konusunda çok fazla olmasa da giriş seviyesinde bilgim var (appasa).Excel tableau sql.
-5-React kullanalı uzun süre olduğu için biraz kendimi yenilemem gerek.
-6- angular security masterclass</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>About Me</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <mat-icon mat-list-icon>person</mat-icon>
+        <h3 mat-line>{{ name }}</h3>
+        <p mat-line>{{ jobTitle }}</p>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>email</mat-icon>
+        <p mat-line>{{ email }}</p>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>phone</mat-icon>
+        <p mat-line>{{ phoneNumber }}</p>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>location_on</mat-icon>
+        <p mat-line>{{ location }}</p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button [href]="linkedinUrl" target="_blank">
+      <mat-icon>linkedin</mat-icon>
+      LinkedIn
+    </a>
+    <a mat-button [href]="githubUrl" target="_blank">
+      <mat-icon>github</mat-icon>
+      GitHub
+    </a>
+  </mat-card-actions>
+</mat-card>
