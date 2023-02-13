@@ -1,10 +1,21 @@
-mat-card {
-  width: 800px;
-  margin: 20px auto;
-  margin-top: 300px;
+mat-card{
+    margin-top: 170px;
+    z-index: -1;
+    width: 80%;
+    margin-left:50px;
+    background-color: bisque;
+    margin-bottom: 0;
+  }
+
+mat-divider{
+z-index: -1;
 }
 
-mat-card-actions {
-  display: flex;
-  justify-content: flex-end;
+@media (max-width: 992px) {
+  mat-card{
+    margin-top: 240px;
+    z-index: -1;
+    width: 80%;
+    
+  }
 }

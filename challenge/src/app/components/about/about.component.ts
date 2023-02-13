@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -6,17 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  name: string = "Kutay Saran"
-  jobTitle="Frontend Web Developer";
-  email="kutaysaranllc@gmail.com";
-  phoneNumber="+90 535 860 6887";
-  location="Istanbul";
   linkedinUrl="https://www.linkedin.com/in/kutay-saran-084406217/";
-  githubUrl="https://github.com/kutaysaran";
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  navigate(){
+    this.router.navigateByUrl(this.linkedinUrl);
+  }
 }
