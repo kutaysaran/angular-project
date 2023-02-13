@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 
@@ -51,7 +52,8 @@ import { MatRadioModule } from '@angular/material/radio';
     BrowserAnimationsModule,
     MatSelectModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
