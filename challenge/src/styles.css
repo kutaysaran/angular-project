@@ -14,7 +14,7 @@ header, main {
   width: 100%;
 }
 .container-fluid{
-padding-top: 68px;
+padding-top: 128px;
 background-color: rgba(255,195,161, 0.504);
 }
 
@@ -34,8 +34,9 @@ border: 2px solid rgb(190, 158, 158);
 
 @media (max-width: 992px) {
   .container-fluid{
-    padding-top: 162px;
+    padding-top: 222px;
 }
+
 
 }
 

@@ -20,6 +20,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+
 
 
 @NgModule({
@@ -47,7 +50,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatPaginatorModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    
+    MatInputModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

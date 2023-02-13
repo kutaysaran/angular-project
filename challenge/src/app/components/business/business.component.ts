@@ -11,19 +11,41 @@ import { PageEvent } from '@angular/material/paginator';
 export class BusinessComponent implements OnInit {
   topHeadlines$: Observable<any> = of(null) ;
   pageIndex = 0;
-  countryCode: string = "tr";
-  word: string = "";
+  private _countryCode: string = "TR";
+  searchKey: string = "";
+  countries: string[] = ['TR', 'MX', 'FR', 'GB', 'DE'];
+  countryNames: { [key: string]: string } = {
+    "TR": 'Turkey',
+    "MX": 'Mexico',
+    "FR": 'France',
+    "GB": 'England',
+    "DE": 'Germany'
+};
   constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
-    this.topHeadlines$ = this.newsService.getTopHeadlinesByFilter(this.countryCode, this.pageIndex+1, this.word);
-    this.topHeadlines$.subscribe(topheadline => console.log(topheadline.articles));
+    this.topHeadlines$ = this.newsService.getTopHeadlinesByFilter(this.countryCode, this.pageIndex+1, this.searchKey);
+  }
+
+  onCommentChange(searchKey: string) {
+     this.searchKey = searchKey;
+     this.topHeadlines$ = this.newsService.getTopHeadlinesByFilter(this.countryCode, this.pageIndex+1, this.searchKey);
+    
   }
 
   onPageChange(event: PageEvent) {
   this.pageIndex = event.pageIndex;
-  this.topHeadlines$ = this.newsService.getTopHeadlinesByFilter(this.countryCode, this.pageIndex+1,this.word);
-  this.topHeadlines$.subscribe(topheadline => console.log(topheadline.articles));
+  this.topHeadlines$ = this.newsService.getTopHeadlinesByFilter(this.countryCode, this.pageIndex+1,this.searchKey);
+  }
+
+  get countryCode(): string {
+    return this._countryCode;
+  }
+
+  set countryCode(value: string) {
+    this._countryCode = value;
+    console.log(`Country code changed to ${value}`);
+    this.topHeadlines$ = this.newsService.getTopHeadlinesByFilter(this.countryCode, this.pageIndex+1, this.searchKey);
   }
 
 }

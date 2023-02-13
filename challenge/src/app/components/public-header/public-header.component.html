@@ -4,7 +4,10 @@
     <h3>Kutay Saran</h3>
   </div>
   <div class="header-right">
-    <input type="text" placeholder="Arama">
+    <mat-form-field class="example-full-width">
+    <mat-label>Search</mat-label>
+    <textarea matInput placeholder="Click enter to search" [(ngModel)]="comment" (keyup)="onKeyUp($event)"></textarea>
+  </mat-form-field>
   </div>
 </header>
 <nav>

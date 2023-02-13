@@ -12,18 +12,22 @@ import { PageEvent } from '@angular/material/paginator';
 export class HomepageComponent implements OnInit {
   topHeadlines$: Observable<any> = of(null) ;
   pageIndex = 0;
-  word: string = "";
+  searchKey: string = "";
   constructor(private newsService: NewsService) {
     }
 
   ngOnInit(): void {
-    this.topHeadlines$ = this.newsService.getTopHeadlines(this.pageIndex+1,this.word);
-    this.topHeadlines$.subscribe(headline => console.log(headline.articles));
+    this.topHeadlines$ = this.newsService.getTopHeadlines(this.pageIndex+1,this.searchKey);
   }
   onPageChange(event: PageEvent) {
   this.pageIndex = event.pageIndex;
-  this.topHeadlines$ = this.newsService.getTopHeadlines(this.pageIndex + 1,this.word);
-  this.topHeadlines$.subscribe(headline => console.log(headline.articles));
+  this.topHeadlines$ = this.newsService.getTopHeadlines(this.pageIndex + 1,this.searchKey);
+  }
+
+  onCommentChange(searchKey: string) {
+     this.searchKey = searchKey;
+     this.topHeadlines$ = this.newsService.getTopHeadlines(this.pageIndex + 1,this.searchKey);
+    
   }
 
 

@@ -1,12 +1,23 @@
-<app-public-header></app-public-header>
+<app-public-header (commentChange)="onCommentChange($event)"></app-public-header>
 <div class="container-fluid">
   <div class="row">
     <div class="col-3 filter-part">
-      <!-- Add your filter components here --> FILTER PART OF COMPONENT
+      <label id="example-radio-group-label">Which country's news would you like to receive information about? </label>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [(ngModel)]="countryCode">
+        <mat-radio-button class="example-radio-button" *ngFor="let country of countries" [value]="country">
+        {{countryNames[country]}}
+        </mat-radio-button>
+      </mat-radio-group>
+    <div style="margin-top:20px">Your selection is : {{countryNames[countryCode]}}</div>
+
     </div>
     <div class="col-9">
       <ng-container *ngIf="topHeadlines$">
         <ng-container *ngIf="topHeadlines$ | async as topHeadlines">
+          <mat-paginator [length]="topHeadlines.totalResults" [pageSize]="20" [pageIndex]="pageIndex" (page)="onPageChange($event)"></mat-paginator>
           <ul>
             <li *ngFor="let headline of topHeadlines.articles">
               <h3>{{ headline.title }}</h3>
